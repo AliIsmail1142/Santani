@@ -1,0 +1,150 @@
+/* introduction styling */
+.intro{
+    grid-area: intro;
+    text-align: center;
+    width: 70%;
+    margin: 10% auto;
+}
+.intro h1{
+    font-size: var(--heading-size);
+}
+.intro p{
+    margin-bottom: 2%;
+    font-size: 1.3rem;
+}
+
+/* styling for all three kitchen sections */
+.kitchen{
+    display: inline-flex;
+    background-color: white;
+    width: 90%;
+    margin: 0% 5% 5% 5%;
+    border: solid 1px var(--dark-grey);
+}
+
+/* styling for individual restaurants */
+.rascals{
+    flex-direction: row-reverse;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2% 3%;
+    width: 30%;
+    text-align: center;
+}
+.image img{
+    width: 100%;
+    margin-bottom: 1%;
+}
+.image a{
+    text-decoration: none;
+    padding: 1%;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    border: solid 1px var(--dark-grey);
+    transition: 0.6s;
+}
+.image a:hover{
+    background-color: var(--light-blue);
+    color: white;
+    border: solid 1px var(--light-blue);
+    transition: 0.4s;
+}
+.info{
+    text-align: center;
+    width: 70%;
+    margin: 2%;
+}
+.img-set{
+    width: 100%;
+    height: 150px;
+}
+.img-set img{
+    margin: 15px 3px;
+    width: 20%;
+    height: 70%;
+    object-fit: cover;
+}
+.info h4{
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+.info h5{
+    margin-top: 2%;
+    text-decoration: underline;
+}
+
+.offers{
+    width: 60%;
+    margin: 5% auto;
+    text-align: center;
+    justify-content: center;
+}
+.offers h3{
+    text-decoration: underline;
+}
+.offer{
+    display: inline-flex;
+    padding: 3%;
+    color: black;
+    border: 1px solid black;
+    background: white;
+    margin: 3%;
+}
+.offer a{
+    text-decoration: none;
+    color: var(--dark-grey);
+    transition: 0.4s;
+}
+.offer a:hover{
+    color: var(--light-blue);
+}
+
+
+/* media responsiveness */
+@media screen and (max-width: 1024px) {
+    .intro{
+        width: 80%;
+    }
+    .rascals, .carmelos, .santani-kitchen{
+        flex-direction: column-reverse;
+    }
+    .image{
+        margin: 0% 5% 5% 5%;
+        width: 90%;
+    }
+    .image a{
+        width: max-content;
+        margin: 3% auto 0% auto;
+    }
+    .img-set img{
+        width: 30%;
+        height: 70%;
+        object-fit: cover;
+    }
+    .info{
+        width: 90%;
+        margin: 5% 5% 0% 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro h1{
+        font-size: 2.2rem;
+    }
+    .intro p{
+        font-size: 1rem;
+    }
+    .image a{
+        font-size: 0.9rem;
+    }
+    .info h4{
+        font-size: 1.1rem;
+    }
+    .info p{
+        font-size: 1rem;
+    }
+}

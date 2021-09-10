@@ -1,0 +1,53 @@
+/* styling for paragraph */
+.paragraph {
+  width: 60%;
+  margin: 5% auto 4% auto;
+  text-align: center;
+}
+.paragraph h2{
+  font-size: 2.8rem;
+}
+.paragraph p{
+  font-size: 1.3rem;
+}
+/* styling the gallery layout */
+.gallery {
+    margin-top: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.column {
+    flex: 23%;
+    max-width: 23%;
+    padding: 0 4px;
+}
+.column img {
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+
+/* media responsiveness */
+@media (max-width: 900px) {
+  .paragraph h2{
+    margin-top: 10vh;
+    font-size: 2rem;
+  }
+  .paragraph p{
+    font-size: 0.9rem;
+  }
+  .column {
+      flex: 48%;
+      max-width: 48%;
+  }
+}
+@media (max-width: 600px) {
+  .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }

@@ -1,0 +1,252 @@
+/* main container styling */
+.container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "slideshow slideshow"
+        "intro intro"
+        "content1 content2"
+        "list list"
+        "location location"
+        "content3 content4"
+        "information information";
+}
+
+/* introduction styling */
+.intro{
+    grid-area: intro;
+    background-color: white;
+    width: 40%;
+    margin: 10% auto 2% auto;
+    padding: 3%;
+    border: solid 1px #d2d2d2dd;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+.intro h1{
+    font-size: var(--heading-size);
+}
+.intro p{
+    font-size: 1.3rem;
+}
+
+/* content section styling */
+.content1 {
+    grid-area: content1;}
+.content2 {
+    grid-area: content2;}
+.content3 {
+    grid-area: content3;}
+.content4 {
+    grid-area: content4;}
+
+.content1, .content2,
+.content3, .content4 {
+    width: 90%;
+    margin: 15% 5% ;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.item {
+    box-shadow: var(--shadow);
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.item img{
+    width: 100%;
+    display: block; /* to remove bottom margin */
+}
+.overlay{
+    margin: 15% 20%;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.45);
+    color: white;
+    transition: 0.8s;
+}
+.overlay:hover{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    transition: 1.5s;
+}
+.overlay a{
+    text-decoration: none;
+    color: white;
+}
+.overlay h3{
+    text-shadow:  2px 2px black;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    transition: 0.6s;
+}
+.overlay h3:hover{
+    font-size: 3.5rem;
+    transition: 1s;
+}
+.overlay p{
+    text-shadow:  2px 2px black;
+    font-size: 1.2rem;
+}
+
+/* location info styling */
+.location{
+    grid-area: location;
+}
+
+/* covid-info list styling */
+.information{
+    grid-area: information;
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+}
+.information h3{
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+.collapsible{
+    display: flex;
+    flex-direction: row;
+    padding: 2px 12px;
+    margin: 5px auto;
+    width: max-content;
+    background-color: rgba(119, 119, 119, 0);
+    color: black;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+.collapsible:first-of-type{
+    margin-top: 15px;
+}
+.active, .collapsible:hover {
+    background-color: var(--main-color-transparent);
+    color: whitesmoke;
+    transition: 0.3s;
+  }
+.active{
+    width: 70%;
+    justify-content: center;
+}
+.bullet-points{
+    background-color: #f1f1f1;
+    text-align: left;
+    width: 60%;
+    margin: 0% auto;
+    padding: 5px 5%;
+    display: none;
+}
+.bullet-points:last-of-type{
+    margin-bottom: 3%;
+}
+
+
+
+
+/* media responsiveness */
+@media screen and (max-width: 768px) {
+    /* container */
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "slideshow"
+        "intro"
+        "content1"
+        "content2"
+        "list"
+        "location"
+        "content3"
+        "content4"
+        "information";
+    }
+    /* intro styling */
+    .intro{
+        width: 80%;
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    .intro h1{
+        font-size: 2.2rem;
+    }
+    .intro p{
+        font-size: 1rem;
+    }
+
+    /* -section- */
+    .content1,
+    .content3{
+        margin-bottom: 0;
+    }
+    .overlay h3{
+        font-size: 1.1rem;
+    }
+    .overlay h3:hover{
+        font-size: 1.3rem;
+        transition: 1s;
+    }
+    .overlay p{
+        font-size: 0.9rem;
+    }
+    
+    /* -list- */
+    .list h2{
+        font-size: 1rem; 
+        /* margin: 0 10%; */
+    }
+    .list div{
+        width: 80%;
+        margin: 4% 10% 0% 10%; 
+        display: block;
+    }
+    .list div:last-child{
+        margin-bottom: 3%;
+    }
+    .list ol{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .type{
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    .room{
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+    .list p{
+        font-size: 0.6rem;
+    }
+    .information h3{
+        font-size: 1.1rem;
+    }
+    .collapsible{
+        font-size: 0.9rem;
+    }
+    .active{
+        width: 85%;
+    }
+    .bullet-points{
+        width: 75%;
+        font-size: 0.7rem;
+    }
+    
+}
+

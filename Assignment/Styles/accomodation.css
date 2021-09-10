@@ -1,0 +1,336 @@
+/* container styling */
+.container{
+    grid-template-columns: 20vw 80vw;
+    grid-template-areas: "sidebar suite-info";
+}
+
+/* sidebar styling */
+.sidebar{
+    grid-area: sidebar;
+    width: 20%;
+    position: fixed;
+    left: 0%;
+    display: flex;
+    height: 92vh; 
+    justify-content: center;
+    align-items: center;
+}
+.type{
+    font-weight: bolder;
+    margin-top: 10%;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: none;
+    color: var(--main-color);
+}
+.room{
+    font-weight: lighter;
+}
+.sidebar ol{
+    list-style: none;
+}
+.sidebar a:hover{
+    color: var(--main-color-transparent);
+}
+.to-table{
+    margin-top: 8%;
+}
+
+/* suites main content styling */
+.suite-info{
+    margin: 10px;
+    grid-area: suite-info;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:    "link1 link1"
+                            "frame1 para1"
+                            "link2 link2"
+                            "frame2 para2"
+                            "link3 link3"
+                            "frame3 para3"
+                            "link4 link4"
+                            "frame4 para4"
+                            "link5 link5"
+                            "frame5 para5"
+                            "link6 link6"
+                            "frame6 para6"
+                            "line line"
+                            "table table";
+}
+
+#junior-suite{grid-area:frame1;}
+#deluxe-suite{grid-area: frame2;}
+#ocean-view{grid-area: frame3;}
+#executive-suite{grid-area: frame4;}
+#presidential-suite{grid-area: frame5;}
+#penthouse{grid-area: frame6;}
+
+#para1{grid-area: para1;}
+#para2{grid-area: para2;}
+#para3{grid-area: para3;}
+#para4{grid-area: para4;}
+#para5{grid-area: para5;}
+#para6{grid-area: para6;}
+
+.link{
+    padding: 4vh;
+}
+
+#link-junior{grid-area: link1;}
+#link-deluxe{grid-area: link2;}
+#link-ocean{grid-area: link3;}
+#link-exec{grid-area: link4;}
+#link-presidential{grid-area: link5;}
+#link-penthouse{grid-area: link6;}
+
+/* styling for all suite image slide */
+.suite, .slide{
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+}
+.suite {
+    margin: 5%;
+    overflow: hidden;
+    display: flex;
+    width: 600px;
+    height: 450px;
+}
+.slide{
+    margin-right: 5%;
+    width: 600px;
+    transition: 1s;
+}
+.suite input {
+    display: none;
+}
+.slide img {
+    border-radius: 10px;
+    max-width: 600px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*styling for manual nav*/
+.nav-manual {
+    position: absolute;
+    width: 600px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn {
+    border: 2px solid #2a3b5f;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {margin-right: 10%;}
+
+.manual-btn:hover {background: var(--light-blue);}
+
+#radio_junior1:checked~.junior {margin-left: 0%;}
+#radio_junior2:checked~.junior {margin-left: -105%;}
+
+#radio_deluxe1:checked~.deluxe {margin-left: 0%;}
+#radio_deluxe2:checked~.deluxe {margin-left: -105%;}
+
+#radio_oceanview1:checked~.oceanview {margin-left: 0%;}
+#radio_oceanview2:checked~.oceanview {margin-left: -105%;}
+
+#radio_exec1:checked~.executive {margin-left: 0%;}
+#radio_exec2:checked~.executive {margin-left: -105%;}
+
+#radio_presidential1:checked~.presidential {margin-left: 0%;}
+#radio_presidential2:checked~.presidential {margin-left: -105%;}
+
+#radio_penthouse1:checked~.penthouse {margin-left: 0%;}
+#radio_penthouse2:checked~.penthouse {margin-left: -105%;}
+
+/* room para styling */
+.span1{
+    display: flex;
+    justify-content: space-between;
+}
+.span2{
+    display: flex;
+    justify-content: space-between;
+}
+.para{
+    margin: 3% auto 0 auto;
+    width: 85%;
+    justify-content: space-around;
+}
+.para h5{
+    color: var(--main-color-transparent);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.para a{
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 29px;
+    padding: 2px 5px;
+    background-color: var(--mid-grey);
+    color: black;
+    transition: 0.6s;
+}
+.para a:hover{
+    background-color: rgb(233, 70, 70);
+    color: whitesmoke;
+    transition: 0.3s;
+}
+.para span{
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 900;
+    display: inline-block;
+}
+.para p{    
+    margin: 5% 0%;
+    font-size: 1rem;
+    color: rgb(75, 75, 75);
+}
+.para h6{
+    display: flex;
+    font-size: 1rem;
+}
+
+/* table styling */
+.table-content{
+    grid-area: table;
+}
+.table{
+    /* border-collapse: collapse; */
+    margin: 5% auto;
+    font-size: 0.9rem;
+    min-width: 70%;
+    text-align: center;
+    
+}
+.table th,
+.table td{
+    padding: 5px 15px;
+}
+.table tbody td{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(100, 100, 100);
+}
+.table tbody td,.table thead tr{
+    background-color:white;
+    border: solid 1px var(--dark-grey);
+}
+.table thead td{
+    border: 0px 1px 0px 1px solid whitesmoke;
+}
+.table thead tr,
+.table #amenities-row{
+    background-color: var(--main-color-transparent);
+    color: whitesmoke;
+    font-weight: bold;
+}
+.table tfoot{
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.rule{
+    grid-area: line;
+    width: 100%;
+}
+.first-col{
+    font-weight: bold;
+}
+
+/* media responsiveness */
+@media screen and (max-width: 1024px) {
+    .suite {
+        width: 450px;
+        height: 450px;
+    }
+    .slide{
+        width: 450px;
+    }
+    .slide img {
+
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* container */
+    .container{
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "sidebar"
+        "suite-info";
+    }
+    .sidebar,.rule{
+        display: none;
+    }
+    .suite-info{
+        margin: 0;
+        grid-template-columns: 100vw;
+        grid-template-areas: "link1"
+                             "para1"
+                             "frame1"
+                             "link2"
+                             "para2"
+                             "frame2"
+                             "link3"
+                             "para3"
+                             "frame3"
+                             "link4"
+                             "para4"
+                             "frame4"
+                             "link5"
+                             "para5"
+                             "frame5"
+                             "link6"
+                             "para6"
+                             "frame6" 
+                             "line"
+                             "table";
+    }
+    .suite {
+        margin: 2% auto;
+        width: 90%;
+        height: 275px;
+        overflow: hidden;
+    }
+    .slide{
+        width: 100%;
+    }
+    .slide img {
+        width: 90vw;
+        height: 275px;
+    }
+    .para{
+        text-align: center;
+        margin: 5% auto;
+        justify-content: center;
+    }
+    .nav-manual {
+        width: 90%;
+        margin-top: 283px;
+    }
+    .table{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 15% auto;
+        font-size: 9px;
+        width: 90vw;
+    }
+    .table th,
+    .table td{
+        padding:5px 2px;
+    }
+    .table tbody{
+        font-size: 0.6rem;
+    }
+    .table tfoot{
+        font-size: 0.5rem;
+    }
+    #span2{
+        justify-content: space-evenly;
+    }
+}

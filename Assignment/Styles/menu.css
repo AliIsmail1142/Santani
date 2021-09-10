@@ -1,0 +1,15 @@
+body{
+    height: 94vh;
+}
+.menu{
+    width: 90%;
+    margin: 8vh auto 2% auto;
+    display: flex;
+    justify-content: center;
+}
+.menu img{
+    max-width: 100%;
+}
+footer{
+    float: inline-end;
+}
