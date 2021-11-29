@@ -90,7 +90,7 @@
     margin-top: 10px;
 }
 .inputbox input,
-.inputbox textarea{
+.reservations p{
     width: 100%;
     padding: 5px 0;
     font-size: 1rem;
@@ -110,15 +110,16 @@
     transition: 0.4s;
     color: var(--mid-grey);
 }
+
 .inputbox input:focus ~ span,
 .inputbox input:valid ~ span,
-.inputbox textarea:focus ~ span,
-.inputbox textarea:valid ~ span{
+.inputbox input:disabled ~ span{
     color: var(--light-blue);
     font-size: 12px;
     transform: translateY(-20px);
 }
-.inputbox input[type="submit"]{
+
+.inputbox input[type="submit"],.inputbox input[type="button"]{
     background: var(--mid-grey);
     color: white;
     cursor: pointer;
@@ -126,10 +127,16 @@
     font-size: 1.1rem;
     transition: 0.5s;
 }
-.inputbox input[type="submit"]:hover{
+.inputbox input[type="submit"]:hover,.inputbox input[type="button"]:hover{
     background: var(--light-blue);
-    font-size: 1.1rem;
 }
+.advanced {
+    display: inline-flex;
+}
+#resFav {
+    margin: auto 3px;
+}
+
 label {
     display: block;
     margin-top: 4px;
@@ -161,5 +168,9 @@ select{
     }
     .box{
         margin-left: 0%;
+    }
+
+    .inputbox input[type="submit"],.inputbox input[type="button"]{
+        font-size: 0.8rem;
     }
 }
