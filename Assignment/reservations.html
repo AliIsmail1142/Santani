@@ -70,14 +70,18 @@
                 <div class="contact-form">
                     <!-- form -->
                     <form>
-                        <h2><center>Book Now</center></h2>
-                        <p><center>Fill the form below to make your reservation</center></p>
+                        <h2>
+                            <center>Book Now</center>
+                        </h2>
+                        <p>
+                            <center>Fill the form below to make your reservation</center>
+                        </p>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" required id="name">
                             <span>Full Name</span>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
+                            <input type="text" required id="email">
                             <span>Email</span>
                         </div>
                         <div class="inputbox">
@@ -85,41 +89,71 @@
                             <span>Phone Number</span>
                         </div>
                         <div class="inputbox">
-                            <input type="number" required max="7" min="1">
-                            <span>Adults</span>
+                            <input type="number" required max="3" min="1" id="totalOccupants" onchange="change()" oninput="checkVal()">
+                            <span>Occupants</span>
                         </div>
                         <div class="inputbox">
-                            <input type="number" required max="3">
-                            <span>Children</span>
-                        </div>
-                        <div class="inputbox">
-                            <input type="date" required>
+                            <input type="date" required id="date">
                             <span>Check-in Date</span>
                         </div>
                         <div class="inputbox">
-                            <input type="date" required>
-                            <span>Check-out Date</span>
+                            <input type="number" required id="days" onchange="change()" min="1">
+                            <span>No. of Days</span>
                         </div>
                         <!-- room selection -->
                         <div class="element">
-                            <label for="room-selection">Select Room Preference</label>
-                            <select id="room-selection" required>
-                                <option value="">Select a suite</option>
-                                <option value="Junior">Junior</option>
-                                <option value="Deluxe">Deluxe</option>
-                                <option value="Ocean-View">Ocean-View</option>
-                                <option value="Executive">Executive</option>
-                                <option value="Presidential">Presidential</option>
-                                <option value="PentHouse">PentHouse</option>
+                            <label for="room-selection">Room Preference</label>
+                            <select id="room-selection" onchange="change()" required>
+                                <option value="" label="Select a room"></option>
+                                <option value="10000" >Junior(Standard)</option>
+                                <option value="10000" >Deluxe(Standard)</option>
+                                <option value="15000" >Ocean-View(Premium)</option>
+                                <option value="20000" >Executive(Deluxe)</option>
+                                <option value="20000" >Presidential(Deluxe)</option>
+                                <option value="25000" >PentHouse(Suite)</option>
                             </select>
                         </div>
-                        <div class="inputbox">
-                            <textarea required></textarea>
-                            <span>Anything Else?</span>
+                        <!-- Meal Selection -->
+                        <div class="element">
+                            <label for="meal-selection">Meal Preference(Required)</label>
+                            <select id="meal-selection" onchange="change()" required>
+                                <option value="" label="Select meal type"></option>
+                                <option value="3500" >Half-Board</option>
+                                <option value="5000" >Full-Board</option>
+                                <option value="1500" >Bed & Breakfast</option>
+                            </select>
                         </div>
-                        <!-- book button -->
+                        <!-- Extras Selection -->
+                        <div class="element">
+                            <label for="extra-selection">Extras(Optional)</label>
+                            <select id="extra-selection" onchange="change()">
+                                <option value="0">None</option>
+                                <option value="1000" >Complementary Cake</option>
+                                <option value="7000" >Extra Bed</option>
+                                <option value="5000" >Candle-lit Dinner</option>
+                            </select>
+                        </div>
+                        <!-- Current reservations area -->
+                        <div class="reservations">
+                            <p id="currentReservation"></p>
+                        </div>
+                        <!-- add to reserve button -->
                         <div class="inputbox">
-                            <input type="submit" value="Confirm Booking">
+                            <input id="add" type="button" value="Add">
+                        </div>
+                        <!-- Final reservations area -->
+                        <div class="reservations">
+                            <p id="finalReservations"></p>
+                        </div>
+                        <!-- Advanced Features -->
+                        <div class="inputbox advanced">
+                            <input id="addFav" type="button" value="Favourite">
+                            <input id="resFav" type="button" value="Reserve Fav">
+                            <input id="loyalty" type="button" value="Loyalty">
+                        </div>
+                        <!-- confirm booking button -->
+                        <div class="inputbox">
+                            <input id="confirm" type="submit" value="Confirm">
                         </div>
                     </form>
                 </div>
@@ -137,6 +171,7 @@
     <script src="Javascript/reservations.js"></script>
 
 </body>
+
 
 <!-- 
     CONTENT REFERENCES
