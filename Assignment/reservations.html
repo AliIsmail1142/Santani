@@ -69,7 +69,7 @@
             <article class="all-info">
                 <div class="contact-form">
                     <!-- form -->
-                    <form>
+                    <form method="post" onsubmit="return confirmation()" name="form1">
                         <h2>
                             <center>Book Now</center>
                         </h2>
@@ -85,25 +85,21 @@
                             <span>Email</span>
                         </div>
                         <div class="inputbox">
-                            <input type="text" required>
-                            <span>Phone Number</span>
-                        </div>
-                        <div class="inputbox">
-                            <input type="number" required max="3" min="1" id="totalOccupants" onchange="change()" oninput="checkVal()">
-                            <span>Occupants</span>
-                        </div>
-                        <div class="inputbox">
-                            <input type="date" required id="date">
+                            <input type="date" required id="date" min= "2021-11-20">
                             <span>Check-in Date</span>
                         </div>
                         <div class="inputbox">
-                            <input type="number" required id="days" onchange="change()" min="1">
+                            <input type="number" required id="days"  min="1" onchange="priceChange()">
                             <span>No. of Days</span>
+                        </div>
+                        <div class="inputbox">
+                            <input type="number" max="3" min="1" id="totalOccupants" onchange="change()" oninput="checkVal()">
+                            <span>Occupants</span>
                         </div>
                         <!-- room selection -->
                         <div class="element">
                             <label for="room-selection">Room Preference</label>
-                            <select id="room-selection" onchange="change()" required>
+                            <select id="room-selection" onchange="change()">
                                 <option value="" label="Select a room"></option>
                                 <option value="10000" >Junior(Standard)</option>
                                 <option value="10000" >Deluxe(Standard)</option>
@@ -116,7 +112,7 @@
                         <!-- Meal Selection -->
                         <div class="element">
                             <label for="meal-selection">Meal Preference(Required)</label>
-                            <select id="meal-selection" onchange="change()" required>
+                            <select id="meal-selection" onchange="change()">
                                 <option value="" label="Select meal type"></option>
                                 <option value="3500" >Half-Board</option>
                                 <option value="5000" >Full-Board</option>
