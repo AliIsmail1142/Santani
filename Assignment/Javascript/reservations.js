@@ -237,6 +237,20 @@ confirmBtn.onclick =  function() {
     if (finalReservation.innerText == "") {
         alert("Please make a reservation.");
     } else {
-    alert("Thank you for your reservation! We will send a digital receipt to the provided email address" + "\n" + "\n" + "Booking Duration: " + FINAL.days + "\n" + "Rooms: " + FINAL.rooms + "\n" + "Occupants: " + FINAL.occupants + "\n" + "Meal Type: " + FINAL.mealTypes + "\n" + "Extras: " + FINAL.extras + "\n" + "Price: Rs." + FINAL.price);
+    alert("Thank you for your reservation! We will send a digital receipt to the provided email address." + "\n" + "\n" + "Booking Duration: " + FINAL.days + "\n" + "Rooms: " + FINAL.rooms + "\n" + "Occupants: " + FINAL.occupants + "\n" + "Meal Type: " + FINAL.mealTypes + "\n" + "Extras: " + FINAL.extras + "\n" + "Price: Rs." + FINAL.price + "\n" + "Loyalty points: " + FINAL.loyalty);
     }
+
+    currenReservations.innerText = "";
+    finalReservation.innerText = "";
+    txtname.value = "";
+    date.value = "";
+    email.value = "";
+    totalDays.value = "";
+
+    txtname.disabled = false;
+    date.disabled = false;
+    email.disabled = false;
+    totalDays.disabled = false;
+
+
 };
