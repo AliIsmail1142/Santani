@@ -233,7 +233,10 @@ reserveFav.onclick = function () {
     addBtn.disabled = false;
 };
 
-function confirmation() {
+confirmBtn.onclick =  function() {
+    if (finalReservation.innerText == "") {
+        alert("Please make a reservation.");
+    } else {
     alert("Thank you for your reservation! We will send a digital receipt to the provided email address" + "\n" + "\n" + "Booking Duration: " + FINAL.days + "\n" + "Rooms: " + FINAL.rooms + "\n" + "Occupants: " + FINAL.occupants + "\n" + "Meal Type: " + FINAL.mealTypes + "\n" + "Extras: " + FINAL.extras + "\n" + "Price: Rs." + FINAL.price);
-
+    }
 };
