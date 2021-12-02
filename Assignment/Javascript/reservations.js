@@ -233,6 +233,7 @@ reserveFav.onclick = function () {
     addBtn.disabled = false;
 };
 
+//click event for the confirm button
 confirmBtn.onclick =  function() {
     if (finalReservation.innerText == "") {
         alert("Please make a reservation.");
@@ -251,6 +252,5 @@ confirmBtn.onclick =  function() {
     date.disabled = false;
     email.disabled = false;
     totalDays.disabled = false;
-
 
 };
